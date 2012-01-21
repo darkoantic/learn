@@ -54,6 +54,7 @@ function lessons_ctools_export_ui_form(&$form, &$form_state) {
     '#maxlength' => 255,
   );
   // TODO Add enabled themes and install profile to this list.
+  // TODO Make this an ajax callback to toggle off select list and enter text.
   $projects = module_list();
   $form['project'] = array(
     '#type' => 'select',
@@ -68,11 +69,7 @@ function lessons_ctools_export_ui_form(&$form, &$form_state) {
     '#title' => t('Project Type'),
     '#description' => t('Core, contrib, or custom.'),
     '#default_value' => $lesson->project_type,
-    '#options' => array(
-      'core' => t('Core'),
-      'contrib' => t('Contrib'),
-      'custom' => t('Custom'),
-    ),
+    '#options' => lessons_get_project_types(),
   );
   $form['lesson_type'] = array(
     '#type' => 'select',

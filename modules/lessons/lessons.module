@@ -30,6 +30,24 @@ function lessons_menu() {
     'access arguments' => array('export lessons'),
     'type' => MENU_CALLBACK,
   );
+  $items['lessons'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('lessons_page_default'),
+    'access arguments' => array('access content'),
+    'menu_name' => 'main-menu',
+    'type' => MENU_CALLBACK,
+  ); 
+  $items['lessons/%lesson'] = array(
+    'title callback' => 'lessons_lesson_page_title',
+    'title arguments' => array(1),
+    // The page callback also invokes drupal_set_title() in case
+    // the menu router's title is overridden by a menu link.
+    'page callback' => 'lessons_lesson_page_view',
+    'page arguments' => array(1),
+    'access callback' => 'lessons_access',
+    'access arguments' => array(1),
+    'type' => MENU_CALLBACK,
+  );
 
   return $items;
 }
@@ -197,6 +215,85 @@ function lessons_features_files($export, $module_name) {
 //-------------------------------------------//
 
 /**
+ * The lessons page uses a simple system settings form.
+ * 
+ * The form array is organized like this: 
+ * 
+ *   $form[$lesson->project_type][$lesson->project][$lesson->lesson_type][$lesson->name]
+ * 
+ *   e.g.
+ * 
+ *   $form['core']['node']['configuration']['how_to_create_node_types'];
+ *   $form['core']['node']['configuration']['how_to_add_fields_to_nodes'];
+ *   $form['core']['node']['code']['how_to_use_hook_node_presave'];
+ * 
+ *   $form['contrib']['lessons']['configuration']['how_to_create_lessons'];
+ *   $form['contrib']['lessons']['code']['how_to_customize_the_lessons_page'];
+ * 
+ * @todo Add form controls / filters
+ *  - toggle descriptions on and off
+ *  - toggle lesson types and project types on and off
+ */
+function lessons_page_default($form, &$form_state) {
+  $lessons = lessons_get_lessons();
+
+  // Create one checkbox per lesson.
+  foreach ($lessons as $lesson) {
+    $form[$lesson->project_type][$lesson->project][$lesson->lesson_type][$lesson->name] = array(
+      '#type' => 'checkbox',
+      '#title' => l(t($lesson->title), "lessons/$lesson->name"),
+      '#default_value' => variable_get($lesson->name, FALSE),
+      '#description' => t($lesson->description),
+    );
+  }
+
+  // Add section headings for project type (e.g. Core, Custom, Contrib).
+  $project_types = lessons_get_project_types();
+  foreach ($form as $project_type => $value) {
+    $form[$project_type]['name'] = array(
+      '#type' => 'item',
+      '#title' => $project_types[$project_type],
+      '#weight' => -100,
+    );
+  }
+
+  return system_settings_form($form);
+}
+
+/**
+ * Callback for lessons/$lesson_name.
+ * 
+ * @param $lesson
+ *  Lesson object.
+ * 
+ * @return $build
+ *  Render array.
+ */
+function lessons_lesson_page_view($lesson) {
+  // If there is a menu link to this lesson, the link becomes the last part
+  // of the active trail, and the link name becomes the page title.
+  // Thus, we must explicitly set the page title to be the lesson title.
+  drupal_set_title($lesson->title);
+
+  $build = array();
+
+  return 'hello world';
+}
+
+/**
+ * Lesson access control. Check for special permission requirements.
+ * If there are none, check for 'access content' permission.
+ */
+function lessons_access($lesson) {
+  if ($lesson->permission) {
+    return user_access($lesson->permission);  
+  }
+  else {
+    return user_access('access content');
+  } 
+}
+
+/**
  * @param $name
  *  string, lesson name.
  * 
@@ -208,15 +305,56 @@ function lessons_get($name) {
 }
 
 /**
- * @param $name
- *  string, lesson name
+ *
+ */
+function lesson_load($name) {
+  return lessons_get($name);  
+}
+
+/**
+ * @param $lesson
+ *  Lesson object.
  *
  * @return $title
- *  Subtheme title.
+ *   Lesson title.
  */
-function lessons_get_title($name) {
- $lesson = lessons_get($name);
- return $lesson->title;
+function lessons_lesson_page_title($lesson) {
+ return t($lesson->title);
+}
+
+/**
+ * @param $lessons
+ *  Array of lesson objects returned by lessons_get_lessons().
+ * 
+ * @return $projects
+ *  Array of project names.
+ */
+function lessons_get_projects($lessons = array()) {
+  if (!$lessons) {
+    $lessons = lessons_get_lesson();  
+  }
+
+  $projects = array();
+  foreach ($lessons as $lesson) {
+    $projects[] = $lesson->project;
+  }
+
+  return array_unique($projects);
+}
+
+/**
+ * Return project types. Lessons are organized by these types on the
+ * lessons/add form and on the lessons listing form.
+ * 
+ * @return $project_types
+ *  Array.
+ */
+function lessons_get_project_types() {
+  return array(
+    'core' => t('Core'),
+    'contrib' => t('Contrib'),
+    'custom' => t('Custom'),
+  );  
 }
 
 /**
