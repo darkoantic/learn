@@ -15,12 +15,10 @@ projects[] = drupal
 
 ; Contrib projects
 ; ----------------
-projects[ctools][subdir] = contrib
-projects[features][subdir] = contrib
-projects[lesson][subdir] = contrib
-projects[ladder][subdir] = contrib
+projects[] = ctools
+projects[] = features
+projects[] = strongarm
 
-; projects[devel][subdir] = contrib
-; projects[diff][subdir] = contrib
-; projects[entity][subdir] = contrib
-; projects[views][subdir] = contrib
+projects[] = lesson
+projects[] = ladder
+projects[] = docreference
