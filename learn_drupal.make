@@ -28,7 +28,7 @@ projects[lesson][subdir] = contrib
 projects[ladder][type] = module 
 projects[ladder][download][type] = git
 projects[ladder][download][url] = http://git.drupal.org/project/ladder.git
-projects[ladder][subdir] = ccontrib
+projects[ladder][subdir] = contrib
 
 projects[docreference][type] = module 
 projects[docreference][download][type] = git
