@@ -11,7 +11,7 @@
  * Implementation of hook_help()
  */
 function lessons_help($path, $arg) {
-  if ($path == 'admin/help#lesson') {
+  if ($path == 'admin/help#lessons') {
     $txt = 'Lessons for learning about and contributing to Drupal.'; 
     $output = t($txt);
     return $output;
@@ -180,10 +180,10 @@ function lessons_lesson_save(&$myobj) {
 /* TODO Revisit for file handling.
 function lessons_features_files($export, $module_name) {
   $add_files = array();
-  if ($lessons_lessons = $export['features']['lessons_lesson']) {
-    // Get css files for each lesson. (Multiple lessons can be exported at once). 
+  if ($lessons_lesson = $export['features']['lessons_lesson']) {
+    // Get css files for each lesson. (Multiple lesson can be exported at once). 
     $i = 0;
-    foreach ($lessons_lessons as $name) {
+    foreach ($lessons_lesson as $name) {
       $lessons_path = file_directory_path() ."/lesson/$name";
       // Get lesson's CSS file
       //$add_files[$i]->name = $module_name .'.'. $name;
@@ -233,6 +233,7 @@ function lessons_features_files($export, $module_name) {
  * @todo Add form controls / filters
  *  - toggle descriptions on and off
  *  - toggle lesson types and project types on and off
+ *  - autosave on checkbox click (maybe this is better included in lessons_style, make lesson green when it is complete and saved)
  */
 function lessons_page_default($form, &$form_state) {
   $lessons = lessons_get_lessons();
@@ -276,6 +277,7 @@ function lessons_lesson_page_view($lesson) {
   drupal_set_title($lesson->title);
 
   $build = array();
+  // CONTINUE HERE. BUILD RENDER ARRAY AND PROVIDE BASIC LESSON PAGE THEMING.
 
   return 'hello world';
 }
@@ -305,7 +307,8 @@ function lessons_get($name) {
 }
 
 /**
- *
+ * This function enables us to auto load a lesson object
+ * with a path like lesson/%lesson. 
  */
 function lesson_load($name) {
   return lessons_get($name);  
@@ -358,12 +361,25 @@ function lessons_get_project_types() {
 }
 
 /**
+ * @param $names_only
+ *  Boolean.
+ * 
  * @return $lessons
- *  Objects, lesson objects.
+ *  Array of lesson objects or lesson titles keyed by name.
  */
-function lessons_get_lessons() {
+function lessons_get_lessons($names_only = FALSE) {
   ctools_include('export');
-  return ctools_export_load_object('lessons_lesson'); 
+  $lessons = ctools_export_load_object('lessons_lesson'); 
+
+  if ($names_only) {
+    $names = array();
+    foreach ($lessons as $lesson) {
+      $names[$lesson->name] = $lesson->title;  
+    }
+    $lessons = $names; 
+  }
+
+  return $lessons;
 }
 
 /**

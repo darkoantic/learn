@@ -108,13 +108,6 @@ function lessons_ctools_export_ui_form(&$form, &$form_state) {
      '#description' => t('TODO Add links to markup help and example lesson format.'),
      '#default_value' => $lesson->steps,
    );
-   $form['documentation'] = array(
-     '#type' => 'textarea',
-     '#title' => t('Documentation'),
-     '#description' => t('Please include links to relevant documentation here, one '
-                       . 'link per line.'),
-     '#default_value' => $lesson->documentation,
-   );
   $form['permission'] = array(
     '#type' => 'textfield',
     '#title' => t('Permission'),

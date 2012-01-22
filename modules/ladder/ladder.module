@@ -144,6 +144,8 @@ function ladder_rung_save(&$myobj) {
 
 /**
  * The ladder page uses a simple system settings form.
+ * 
+ * TODO Replace hardcoded ladder here with CSS.
  */
 function ladder_page_default($form, &$form_state) {
   $rungs = ladder_get_rungs();
