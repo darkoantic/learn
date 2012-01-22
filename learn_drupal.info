@@ -27,4 +27,11 @@ dependencies[] = rdf
 dependencies[] = features
 dependencies[] = ctools 
 dependencies[] = lessons
+dependencies[] = ladder
+dependencies[] = docreferences
+dependencies[] = strongarm
+
+dependencies[] = drupal_ladder_main_menu
+; dependencies[] = drupal_ladder_admin_menu
+
 files[] = learn_drupal.profile
