@@ -16,9 +16,9 @@ projects[] = drupal
 ; Contrib projects
 ; ----------------
 projects[ctools][subdir] = contrib
+projects[diff][subdir] = contrib 
 projects[features][subdir] = contrib
 projects[strongarm][subdir] = contrib 
-
 
 projects[lesson][type] = module 
 projects[lesson][download][type] = git

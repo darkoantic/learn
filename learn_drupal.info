@@ -16,7 +16,7 @@ dependencies[] = options
 dependencies[] = path
 dependencies[] = taxonomy
 dependencies[] = dblog
-dependencies[] = search
+; dependencies[] = search
 dependencies[] = shortcut
 dependencies[] = toolbar
 dependencies[] = overlay
@@ -30,6 +30,7 @@ dependencies[] = lessons
 dependencies[] = ladder
 dependencies[] = docreferences
 dependencies[] = strongarm
+; dependencies[] = diff
 
 dependencies[] = drupal_ladder_main_menu
 ; dependencies[] = drupal_ladder_admin_menu

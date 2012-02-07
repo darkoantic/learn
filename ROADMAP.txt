@@ -1,0 +1,67 @@
+To-Do's Before Drupalcon Denver
+-------------------------------
+
+
+About
+--------
+
+  Must have:
+  - Write an About page
+  - 
+
+Ladder
+--------
+
+  Must have:
+  / Enable multiple ladders
+  - Make "Ladder" menu item "Drupal Ladder"
+  - Enable multi-user
+  - Each rung should link to a lesson or a lesson plan
+  - Replace proof-of-concept stuff in ladder (e.g. CSS, systems setting form)
+
+  Nice to have:
+  - Ladders block
+
+
+Lessons
+---------
+
+  Must have:
+  - Enable multi-user
+  - Enable lesson plans
+  - Hangle versions of Drupal as versions of the same object (exported/imported together, like translations)
+
+  Nice to have:
+  - Enable filters
+  - Finished button at the bottom of the lesson 
+  - Lesson plan blocks
+  - Theming to indicate lesson status
+
+
+Documentation / References
+---------------------------
+
+  Must have:
+  - Make this a proper page callback, not a form
+
+
+Multilingual
+----------
+
+  Must have:
+  -  Make objects language aware and translatable
+      - hook_schema_alter(&$schema)
+          Fields:
+          - language = global $language->language;
+          - is_translation
+          - original = name-or-original-obj
+      - make name field uneditable; $name = $language->language . "_$name";
+      - add an "+ add translation" button / contextual link to existing objs
+      - show translations and original in admin screen when viewing/editing obj
+   - ?? hook into ctools for load/save/etc and make language aware
+
+
+Features
+----------
+
+  - TBD
