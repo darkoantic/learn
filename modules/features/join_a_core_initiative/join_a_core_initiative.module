@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Join a core initiative feature.
+ */
+
+include_once('join_a_core_initiative.features.inc');

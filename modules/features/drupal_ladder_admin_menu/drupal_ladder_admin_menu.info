@@ -1,7 +1,7 @@
 name = "Drupal Ladder Admin Menu"
 description = "Provide secondary admin menu for Drupal Ladder distro"
 core = "7.x"
-package = "Features"
+package = "Drupal Ladder"
 version = "7.x-1.0"
 project = "drupal_ladder_admin_menu"
 dependencies[] = "ctools"

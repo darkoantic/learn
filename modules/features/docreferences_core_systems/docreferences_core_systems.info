@@ -1,7 +1,7 @@
 name = "Core systems"
 description = "Links to documentation for Drupal core systems"
 core = "7.x"
-package = "Features"
+package = "Documentation-References"
 php = "5.2.4"
 version = "7.x-1.0"
 project = "docreferences_core_systems"

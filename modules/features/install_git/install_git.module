@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Install Git feature.
+ */
+
+include_once('install_git.features.inc');

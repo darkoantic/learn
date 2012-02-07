@@ -28,24 +28,6 @@ function drupal_ladder_main_menu_menu_default_menu_links() {
     'expanded' => '0',
     'weight' => '-47',
   );
-  // Exported menu link: menu-learn-drupal-main:ladder
-  $menu_links['menu-learn-drupal-main:ladder'] = array(
-    'menu_name' => 'menu-learn-drupal-main',
-    'link_path' => 'ladder',
-    'router_path' => 'ladder',
-    'link_title' => 'Ladder',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-    ),
-    'module' => 'menu',
-    'hidden' => '0',
-    'external' => '0',
-    'has_children' => '0',
-    'expanded' => '0',
-    'weight' => '-49',
-  );
   // Exported menu link: menu-learn-drupal-main:ladder/about
   $menu_links['menu-learn-drupal-main:ladder/about'] = array(
     'menu_name' => 'menu-learn-drupal-main',
@@ -63,6 +45,24 @@ function drupal_ladder_main_menu_menu_default_menu_links() {
     'has_children' => '0',
     'expanded' => '0',
     'weight' => '-50',
+  );
+  // Exported menu link: menu-learn-drupal-main:ladder/drupal
+  $menu_links['menu-learn-drupal-main:ladder/drupal'] = array(
+    'menu_name' => 'menu-learn-drupal-main',
+    'link_path' => 'ladder/drupal',
+    'router_path' => 'ladder/%',
+    'link_title' => 'Ladder',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+    ),
+    'module' => 'menu',
+    'hidden' => '0',
+    'external' => '0',
+    'has_children' => '0',
+    'expanded' => '0',
+    'weight' => '-49',
   );
   // Exported menu link: menu-learn-drupal-main:lessons
   $menu_links['menu-learn-drupal-main:lessons'] = array(

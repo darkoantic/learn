@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Core office hours feature.
+ */
+
+include_once('core_office_hours.features.inc');

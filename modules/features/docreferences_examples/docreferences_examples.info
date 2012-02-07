@@ -1,7 +1,7 @@
 name = "Examples"
 description = "Links to example code"
 core = "7.x"
-package = "Features"
+package = "Documentation-References"
 php = "5.2.4"
 version = "7.x-1.0"
 project = "docreferences_examples"
