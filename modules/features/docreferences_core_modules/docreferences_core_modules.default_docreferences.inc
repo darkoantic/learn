@@ -136,7 +136,7 @@ function docreferences_core_modules_default_docreferences() {
   $reference->api_version = 1;
   $reference->name = 'file_module';
   $reference->title = 'file.module';
-  $reference->category = '';
+  $reference->category = 'Core Modules';
   $reference->description = '';
   $reference->url = 'http://api.drupal.org/api/drupal/modules--file--file.module/7';
   $reference->weight = 0;
