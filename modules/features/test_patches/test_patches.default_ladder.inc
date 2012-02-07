@@ -19,7 +19,7 @@ function test_patches_default_ladder() {
   $rung->description = '';
   $rung->lesson = 'test_patches';
   $rung->css_class = 'ladder-in-development';
-  $rung->weight = 0;
+  $rung->weight = 110;
   $export['test_patches'] = $rung;
 
   return $export;
