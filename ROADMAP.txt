@@ -29,7 +29,9 @@ Lessons
   Must have:
   - Enable multi-user
   - Enable lesson plans
-  - Hangle versions of Drupal as versions of the same object (exported/imported together, like translations)
+  - Versions
+    - Handle versions of Drupal as versions of the same object (exported/imported together, like translations)
+    - Make 'all' an option
 
   Nice to have:
   - Enable filters
@@ -64,4 +66,4 @@ Multilingual
 Features
 ----------
 
-  - TBD
+  - 

@@ -2,6 +2,9 @@ name = Learn Drupal
 description = Drupal installation profile including lessons and exercises to help you learn and contribute to Drupal.
 version = VERSION
 core = 7.x
+
+; core
+; ------
 dependencies[] = block
 dependencies[] = color
 dependencies[] = comment
@@ -16,7 +19,7 @@ dependencies[] = options
 dependencies[] = path
 dependencies[] = taxonomy
 dependencies[] = dblog
-; dependencies[] = search
+dependencies[] = search
 dependencies[] = shortcut
 dependencies[] = toolbar
 dependencies[] = overlay
@@ -24,15 +27,37 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 
-dependencies[] = features
+; contrib
+; ---------
 dependencies[] = ctools 
-dependencies[] = lessons
-dependencies[] = ladder
-dependencies[] = docreferences
-dependencies[] = strongarm
 ; dependencies[] = diff
+dependencies[] = docreferences
+dependencies[] = features
+dependencies[] = ladder
+dependencies[] = lessons
+dependencies[] = strongarm
 
-dependencies[] = drupal_ladder_main_menu
-; dependencies[] = drupal_ladder_admin_menu
+; features
+; ---------
+; dependencies[] = core_office_hours
+; dependencies[] = create_issues
+; dependencies[] = docreferences_api_reference
+; dependencies[] = docreferences_core_modules
+; dependencies[] = docreferences_core_systems
+; dependencies[] = docreferences_drupal_8_core_initiatives
+; dependencies[] = docreferences_examples
+; ; dependencies[] = drupal_ladder_admin_menu ; TODO why is this giving us trouble? menu and features menus seem to conflict.
+; dependencies[] = drupal_ladder_main_menu
+; dependencies[] = install_drupal
+; dependencies[] = install_git
+; dependencies[] = issue_teams
+; dependencies[] = join_a_core_initiative
+; dependencies[] = maintain_core_component
+; dependencies[] = own_a_core_project
+; dependencies[] = reroll_patches
+; dependencies[] = review_and_revise_patches
+; dependencies[] = test_patches
+; dependencies[] = write_a_patch
+; ; dependencies[] = write_tests ; TODO why is this hanging on install?!?!?
 
 files[] = learn_drupal.profile
