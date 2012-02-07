@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the API Reference feature.
+ */
+
+include_once('docreferences_api_reference.features.inc');

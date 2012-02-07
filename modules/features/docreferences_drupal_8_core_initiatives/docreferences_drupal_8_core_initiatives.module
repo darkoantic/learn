@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Drupal 8 core initiatives feature.
+ */
+
+include_once('docreferences_drupal_8_core_initiatives.features.inc');

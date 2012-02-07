@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Core systems feature.
+ */
+
+include_once('docreferences_core_systems.features.inc');
