@@ -5,7 +5,7 @@
  *
  * Perform actions to set up the site for this profile.
  */
-function learn_drupal_install() {
+function learn_install() {
   // Add text formats.
   $filtered_html_format = array(
     'format' => 'filtered_html',
