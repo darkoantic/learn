@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Write a patch feature.
- */
-
-include_once('write_a_patch.features.inc');

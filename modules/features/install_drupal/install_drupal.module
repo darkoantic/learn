@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Install Drupal feature.
- */
-
-include_once('install_drupal.features.inc');

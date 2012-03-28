@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Test patches feature.
- */
-
-include_once('test_patches.features.inc');

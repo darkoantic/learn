@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Own a core project feature.
- */
-
-include_once('own_a_core_project.features.inc');

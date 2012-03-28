@@ -12,6 +12,7 @@ dependencies[] = contextual
 dependencies[] = dashboard
 dependencies[] = help
 dependencies[] = image
+dependencies[] = lessons
 dependencies[] = list
 dependencies[] = menu
 dependencies[] = number
@@ -29,35 +30,51 @@ dependencies[] = rdf
 
 ; contrib
 ; ---------
-dependencies[] = ctools 
+; dependencies[] = devel
 ; dependencies[] = diff
-dependencies[] = docreferences
+; dependencies[] = rules
+dependencies[] = ctools 
+dependencies[] = entity
+dependencies[] = entityreference
 dependencies[] = features
+dependencies[] = field_group 
+dependencies[] = flag 
 dependencies[] = ladder
 dependencies[] = lessons
+dependencies[] = pathauto
+dependencies[] = token
+dependencies[] = node_export
+dependencies[] = node_export_serialize
+dependencies[] = node_export_features
+; dependencies[] = services
 dependencies[] = strongarm
+dependencies[] = uuid
+; dependencies[] = uuid_services
 
 ; features
 ; ---------
-dependencies[] = core_office_hours
-dependencies[] = create_issues
-dependencies[] = docreferences_api_reference
-dependencies[] = docreferences_core_modules
-dependencies[] = docreferences_core_systems
-dependencies[] = docreferences_drupal_8_core_initiatives
-dependencies[] = docreferences_examples
-; dependencies[] = drupal_ladder_admin_menu ; TODO why is this giving us trouble? menu and features menus seem to conflict.
-dependencies[] = drupal_ladder_main_menu
-dependencies[] = install_drupal
-dependencies[] = install_git
-dependencies[] = issue_teams
-dependencies[] = join_a_core_initiative
-dependencies[] = maintain_core_component
-dependencies[] = own_a_core_project
-dependencies[] = reroll_patches
-dependencies[] = review_and_revise_patches
-dependencies[] = test_patches
-dependencies[] = write_a_patch
-; dependencies[] = write_tests ; TODO why is this hanging on install?!?!?
+dependencies[] = lessons_bookmarks
+dependencies[] = lessons_completed
+dependencies[] = lessons_curriculum
+dependencies[] = lessons_info
+dependencies[] = lessons_lesson
+dependencies[] = lessons_lists
+dependencies[] = lessons_prerequisites
+dependencies[] = lessons_recommendations
+dependencies[] = lessons_uuid
 
-les[] = learn_drupal.profile
+; custom modules
+; ---------------
+dependencies[] = learn_glue
+
+; custom features
+; ----------------
+dependencies[] = learn_default_site_settings
+dependencies[] = learn_lesson_content
+dependencies[] = learn_node_export_settings
+dependencies[] = learn_page
+dependencies[] = learn_text_format_filters
+
+; files
+; --------
+files[] = learn.profile

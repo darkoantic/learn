@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Write tests feature.
- */
-
-include_once('write_tests.features.inc');

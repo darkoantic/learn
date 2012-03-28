@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Issue Teams feature.
- */
-
-include_once('issue_teams.features.inc');

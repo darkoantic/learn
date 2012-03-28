@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Review and revise patches feature.
- */
-
-include_once('review_and_revise_patches.features.inc');

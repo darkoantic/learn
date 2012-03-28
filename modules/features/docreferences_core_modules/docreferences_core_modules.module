@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Core modules feature.
- */
-
-include_once('docreferences_core_modules.features.inc');

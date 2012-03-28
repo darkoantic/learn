@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Examples feature.
- */
-
-include_once('docreferences_examples.features.inc');

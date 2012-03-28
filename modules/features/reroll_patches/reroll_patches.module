@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Re-roll patches feature.
- */
-
-include_once('reroll_patches.features.inc');

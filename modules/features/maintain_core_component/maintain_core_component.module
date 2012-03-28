@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Maintain a core component feature.
- */
-
-include_once('maintain_core_component.features.inc');
